@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuración de Perfil</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3 col-lg-2 sidebar">
+                <div class="text-center my-4">
+                    <img id="sidebarAvatar" src="" class="rounded-circle border border-3 border-white mb-2" width="80" height="80" alt="Foto perfil">
+                    <h5 id="sidebarUsername" class="text-white mb-0"></h5>
+                    <small id="sidebarRole" class="text-white-50">Administrador</small>
+                </div>
+                <ul class="nav flex-column px-3">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="admin.html">
+                            <i class="bi bi-people-fill me-2"></i>Usuarios
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" href="profile.html">
+                            <i class="bi bi-person-gear me-2"></i>Mi Perfil
+                        </a>
+                    </li>
+                    <li class="nav-item mt-3">
+                        <button id="logoutBtn" class="btn btn-outline-light w-100">
+                            <i class="bi bi-box-arrow-left me-2"></i>Cerrar Sesión
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-md-9 col-lg-10 main-content">
+                <div class="d-flex justify-content-between align-items-center mb-4 pt-3">
+                    <h2><i class="bi bi-person-gear me-2"></i> Configuración de Perfil</h2>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card mb-4">
+                            <div class="card-header bg-primary text-white">
+                                <i class="bi bi-person-circle me-2"></i>Información Personal
+                            </div>
+                            <div class="card-body">
+                                <form id="profileForm">
+                                    <div class="text-center mb-4">
+                                        <img id="profileAvatar" src="" class="rounded-circle border mb-3" width="120" height="120" alt="Avatar">
+                                        <div class="d-flex justify-content-center">
+                                            <button type="button" class="btn btn-sm btn-outline-primary me-2" id="changeAvatarBtn">
+                                                <i class="bi bi-camera me-1"></i>Cambiar
+                                            </button>
+                                            <input type="file" id="avatarInput" accept="image/*" style="display: none;">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="username" class="form-label">Nombre de Usuario</label>
+                                        <input type="text" class="form-control" id="username" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">Correo Electrónico</label>
+                                        <input type="email" class="form-control" id="email" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="currentPassword" class="form-label">Contraseña Actual</label>
+                                        <input type="password" class="form-control" id="currentPassword">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="newPassword" class="form-label">Nueva Contraseña</label>
+                                        <input type="password" class="form-control" id="newPassword">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="confirmPassword" class="form-label">Confirmar Contraseña</label>
+                                        <input type="password" class="form-control" id="confirmPassword">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary w-100">
+                                        <i class="bi bi-save me-2"></i>Guardar Cambios
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header bg-primary text-white">
+                                <i class="bi bi-shield-lock me-2"></i>Seguridad
+                            </div>
+                            <div class="card-body">
+                                <div class="alert alert-info">
+                                    <i class="bi bi-info-circle me-2"></i>Último inicio de sesión: <span id="lastLogin"></span>
+                                </div>
+                                <div class="d-grid gap-2">
+                                    <button class="btn btn-outline-danger" id="logoutAllDevicesBtn">
+                                        <i class="bi bi-phone me-2"></i>Cerrar sesión en todos los dispositivos
+                                    </button>
+                                    <button class="btn btn-outline-secondary" id="activityLogBtn">
+                                        <i class="bi bi-clock-history me-2"></i>Ver historial de actividad
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Mis Scripts -->
+    <script src="../js/auth.js"></script>
+    <script src="../js/profile.js"></script>
+</body>
+</html>

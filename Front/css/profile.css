@@ -1,0 +1,159 @@
+/* profile.css - Estilos consistentes con admin.css */
+
+:root {
+    --sidebar-width: 250px;
+    --primary-color: #3a4b6d;
+    --secondary-color: #1e2b4a;
+    --card-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Sidebar - Mantenemos los mismos estilos que admin */
+.sidebar {
+    width: var(--sidebar-width);
+    background: linear-gradient(180deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: rgb(0, 0, 0);
+    padding-top: 20px;
+    box-shadow: 2px 0 10px rgba(209, 18, 18, 0.1);
+    position: fixed;
+    height: 100%;
+}
+
+.sidebar .nav-link {
+    color: rgba(190, 26, 26, 0.8);
+    border-radius: 5px;
+    margin-bottom: 5px;
+    transition: all 0.3s;
+}
+
+.sidebar .nav-link:hover, 
+.sidebar .nav-link.active {
+    background-color: rgba(255,255,255,0.1);
+    color: rgb(241, 0, 0);
+}
+
+.sidebar .nav-link.active {
+    font-weight: 500;
+}
+
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 2rem;
+    margin-left: var(--sidebar-width);
+}
+
+/* Cards - Estilo consistente */
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.card-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    border-radius: 10px 10px 0 0 !important;
+    padding: 1rem 1.5rem;
+    font-weight: 500;
+}
+
+/* Avatar */
+.rounded-circle {
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.rounded-circle:hover {
+    transform: scale(1.05);
+}
+
+/* Formularios */
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(58, 75, 109, 0.25);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    border: none;
+    padding: 10px;
+    font-weight: 500;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #2f3d5d 0%, #182339 100%);
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Alertas */
+.alert-info {
+    background-color: #e7f1ff;
+    color: #0a58ca;
+    border-color: #9ec5fe;
+}
+
+/* Responsive - Igual que admin */
+@media (max-width: 992px) {
+    .sidebar {
+        width: 70px;
+        overflow: hidden;
+    }
+    .sidebar-text {
+        display: none;
+    }
+    .main-content {
+        margin-left: 70px;
+    }
+    .user-profile {
+        padding: 1rem 0.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+    .main-content {
+        margin-left: 0;
+        padding: 1rem;
+    }
+}
+
+/* Estilos específicos para profile */
+#profileAvatar {
+    border: 3px solid var(--primary-color);
+}
+
+#changeAvatarBtn {
+    transition: all 0.3s;
+}
+
+.d-grid.gap-2 .btn {
+    margin-bottom: 0.5rem;
+}
+
+/* Efecto hover para botones de seguridad */
+#logoutAllDevicesBtn:hover,
+#activityLogBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}

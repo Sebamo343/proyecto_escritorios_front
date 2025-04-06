@@ -1,0 +1,105 @@
+:root {
+    --sidebar-width: 250px;
+    --primary-color: #3a4b6d;
+    --secondary-color: #1e2b4a;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+}
+
+/* Sidebar */
+.sidebar {
+    width: var(--sidebar-width);
+    background: linear-gradient(180deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    padding-top: 20px;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    position: fixed;
+    height: 100%;
+}
+
+.user-profile {
+    padding: 1.5rem 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.user-avatar {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 3px solid white;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    margin-left: var(--sidebar-width);
+}
+
+/* Tabla de usuarios */
+.user-table {
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.user-avatar-sm {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
+/* Badges */
+.badge-admin {
+    background-color: #dc3545;
+}
+
+.badge-user {
+    background-color: #0d6efd;
+}
+
+/* Modal */
+.avatar-preview {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+/* Transiciones */
+.nav-link, .btn {
+    transition: all 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .sidebar {
+        width: 70px;
+        overflow: hidden;
+    }
+    .sidebar-text {
+        display: none;
+    }
+    .main-content {
+        margin-left: 70px;
+    }
+    .user-profile {
+        padding: 1rem 0.5rem;
+    }
+    .user-avatar {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+    .main-content {
+        margin-left: 0;
+    }
+}
